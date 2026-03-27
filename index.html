@@ -16,10 +16,10 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/tgdb">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/etorth/tgdb">View on GitHub</a>
 
           <h1 id="project_title">tgdb</h1>
-          <h2 id="project_tagline">the curses debugger</h2>
+          <h2 id="project_tagline">a terminal-based debugger</h2>
 
         </header>
     </div>
@@ -29,10 +29,9 @@
       <section id="main_content" class="inner">
         <h3>Welcome</h3>
 
-<p>tgdb is a lightweight terminal-based interface to the GNU Debugger
-(GDB). In addition to the standard gdb console, tgdb provides a split screen
-view that displays the source code as it executes.  The keyboard interface is
-modeled after vim, so vim users should feel at home using tgdb.</p>
+<p>tgdb is a lightweight terminal-based interface to the GNU Debugger (GDB). In addition to the standard GDB console, tgdb provides a split-screen view that displays the source code as it executes. The keyboard interface is modeled after Vim, so Vim users should feel at home using tgdb.</p>
+
+<p>tgdb is heavily inspired by <a href="https://cgdb.github.io/">CGDB</a>. It reuses CGDB's documentation and webpages where appropriate, and aims to be fully compatible with CGDB's configuration files, commands, and key bindings.</p>
 
 <h3>Screenshot</h3>
 
@@ -50,6 +49,14 @@ modeled after vim, so vim users should feel at home using tgdb.</p>
 <li>Scrollable gdb history of entire session</li>
 <li>Tab completion</li>
 <li>Key mappings (macros)</li>
+</ul>
+
+<h3>Features specific to tgdb</h3>
+
+<ul>
+<li>Python API for scripting</li>
+<li>Heredoc-style :python &lt;&lt;EOF support</li>
+<li>User-defined :command support (similar to Vim)</li>
 </ul>
 
 <h3>Stable Release</h3>
@@ -84,7 +91,7 @@ Online documentation:
       </footer>
     </div>
 
-    
+
 
   </body>
 </html>
