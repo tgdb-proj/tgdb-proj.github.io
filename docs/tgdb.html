@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <!-- 
-This manual is for GNU CGDB
+This manual is for GNU TGDB
 (version 0.8.0, 16 January 2022),
 the GNU ncurses based front end to GDB.
 
-Copyright (C) 2019 CGDB Team
+Copyright (C) 2019 TGDB Team
 
 This document is part of a free software program; you can redistribute it
 and/or modify it under the terms of the GNU General Public License as
@@ -22,10 +22,10 @@ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
 Place, Suite 330, Boston MA 02111-1307 USA -->
 <!-- Created by GNU Texinfo 6.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>CGDB Manual 0.8.0</title>
+<title>TGDB Manual 0.8.0</title>
 
-<meta name="description" content="CGDB Manual 0.8.0">
-<meta name="keywords" content="CGDB Manual 0.8.0">
+<meta name="description" content="TGDB Manual 0.8.0">
+<meta name="keywords" content="TGDB Manual 0.8.0">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -66,7 +66,7 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en">
-<h1 class="settitle" align="center">CGDB Manual 0.8.0</h1>
+<h1 class="settitle" align="center">TGDB Manual 0.8.0</h1>
 
 
 
@@ -76,9 +76,9 @@ ul.no-bullet {list-style: none}
 <div class="contents">
 
 <ul class="no-bullet">
-  <li><a name="toc-Summary-of-CGDB" href="#Summary">Summary of CGDB</a></li>
-  <li><a name="toc-Getting-In-and-Out-of-CGDB" href="#Invocation">1 Getting In and Out of CGDB</a></li>
-  <li><a name="toc-Understanding-the-core-concepts-of-CGDB" href="#Understanding-CGDB">2 Understanding the core concepts of CGDB</a>
+  <li><a name="toc-Summary-of-TGDB" href="#Summary">Summary of TGDB</a></li>
+  <li><a name="toc-Getting-In-and-Out-of-TGDB" href="#Invocation">1 Getting In and Out of TGDB</a></li>
+  <li><a name="toc-Understanding-the-core-concepts-of-TGDB" href="#Understanding-TGDB">2 Understanding the core concepts of TGDB</a>
   <ul class="no-bullet">
     <li><a name="toc-Understanding-the-source-window_002e" href="#Source-Window">2.1 Understanding the source window.</a></li>
     <li><a name="toc-Understanding-the-GDB-window_002e" href="#GDB-Window">2.2 Understanding the GDB window.</a></li>
@@ -86,27 +86,27 @@ ul.no-bullet {list-style: none}
     <li><a name="toc-Understanding-the-status-bar_002e" href="#Status-Bar">2.4 Understanding the status bar.</a></li>
     <li><a name="toc-Switch-between-windows" href="#Switching-Windows">2.5 Switch between windows</a></li>
   </ul></li>
-  <li><a name="toc-CGDB-commands" href="#Controlling-CGDB">3 CGDB commands</a>
+  <li><a name="toc-TGDB-commands" href="#Controlling-TGDB">3 TGDB commands</a>
   <ul class="no-bullet">
-    <li><a name="toc-Commands-available-during-CGDB-mode" href="#CGDB-Mode">3.1 Commands available during CGDB mode</a></li>
+    <li><a name="toc-Commands-available-during-TGDB-mode" href="#TGDB-Mode">3.1 Commands available during TGDB mode</a></li>
     <li><a name="toc-Commands-available-during-GDB-mode" href="#GDB-Mode">3.2 Commands available during GDB mode</a></li>
     <li><a name="toc-Commands-available-during-the-file-dialog-mode" href="#File-Dialog-Mode">3.3 Commands available during the file dialog mode</a></li>
   </ul></li>
-  <li><a name="toc-CGDB-configuration-commands" href="#Configuring-CGDB">4 CGDB configuration commands</a></li>
-  <li><a name="toc-CGDB-highlighting-groups" href="#Highlighting-Groups">5 CGDB highlighting groups</a>
+  <li><a name="toc-TGDB-configuration-commands" href="#Configuring-TGDB">4 TGDB configuration commands</a></li>
+  <li><a name="toc-TGDB-highlighting-groups" href="#Highlighting-Groups">5 TGDB highlighting groups</a>
   <ul class="no-bullet">
     <li><a name="toc-The-different-highlighting-groups" href="#Available-Highlighting-Groups">5.1 The different highlighting groups</a></li>
     <li><a name="toc-The-different-attributes" href="#Available-Attributes">5.2 The different attributes</a></li>
     <li><a name="toc-The-different-colors" href="#Available-Colors">5.3 The different colors</a></li>
   </ul></li>
-  <li><a name="toc-CGDB-key-user-interface" href="#Key-User-Interface">6 CGDB key user interface</a>
+  <li><a name="toc-TGDB-key-user-interface" href="#Key-User-Interface">6 TGDB key user interface</a>
   <ul class="no-bullet">
     <li><a name="toc-The-KUI_0027s-time-out-options" href="#Configuring-the-KUI-Time-Out-Options">6.1 The KUI&rsquo;s time out options</a></li>
     <li><a name="toc-Using-maps" href="#Using-Maps">6.2 Using maps</a></li>
     <li><a name="toc-Understanding-keycodes" href="#Understanding-Keycodes">6.3 Understanding keycodes</a></li>
   </ul></li>
-  <li><a name="toc-Allowing-terminal-control-flow-in-CGDB" href="#Terminal-Control-Flow">7 Allowing terminal control flow in CGDB</a></li>
-  <li><a name="toc-Building-CGDB-from-source" href="#Building-CGDB">8 Building CGDB from source</a></li>
+  <li><a name="toc-Allowing-terminal-control-flow-in-TGDB" href="#Terminal-Control-Flow">7 Allowing terminal control flow in TGDB</a></li>
+  <li><a name="toc-Building-TGDB-from-source" href="#Building-TGDB">8 Building TGDB from source</a></li>
   <li><a name="toc-Copying-This-Manual-1" href="#Copying-This-Manual">Appendix A Copying This Manual</a></li>
   <li><a name="toc-Index-1" href="#Index">Index</a></li>
 </ul>
@@ -118,14 +118,14 @@ ul.no-bullet {list-style: none}
 <p>
 Next: <a href="#Summary" accesskey="n" rel="next">Summary</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="CGDB"></a>
-<h1 class="top">CGDB</h1>
+<a name="TGDB"></a>
+<h1 class="top">TGDB</h1>
 
-<p>This manual is for <acronym>GNU</acronym> CGDB
+<p>This manual is for <acronym>GNU</acronym> TGDB
 (version 0.8.0, 16 January 2022),
 the <acronym>GNU</acronym> ncurses based front end to GDB.
 </p>
-<p>Copyright &copy; 2019 CGDB Team
+<p>Copyright &copy; 2019 TGDB Team
 </p>
 <blockquote>
 <p>This document is part of a free software program; you can redistribute it
@@ -145,27 +145,27 @@ Place, Suite 330, Boston MA 02111-1307 USA
 
 
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Summary" accesskey="1">Summary</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Summary of CGDB
+<tr><td align="left" valign="top">&bull; <a href="#Summary" accesskey="1">Summary</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Summary of TGDB
 </td></tr>
 <tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
 
-</pre></th></tr><tr><td align="left" valign="top">&bull; <a href="#Invocation" accesskey="2">Invocation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Getting in and out of CGDB
+</pre></th></tr><tr><td align="left" valign="top">&bull; <a href="#Invocation" accesskey="2">Invocation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Getting in and out of TGDB
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Understanding-CGDB" accesskey="3">Understanding CGDB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Understanding the core concepts of CGDB
+<tr><td align="left" valign="top">&bull; <a href="#Understanding-TGDB" accesskey="3">Understanding TGDB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Understanding the core concepts of TGDB
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Controlling-CGDB" accesskey="4">Controlling CGDB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">CGDB commands
+<tr><td align="left" valign="top">&bull; <a href="#Controlling-TGDB" accesskey="4">Controlling TGDB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">TGDB commands
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Configuring-CGDB" accesskey="5">Configuring CGDB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">CGDB configuration commands
+<tr><td align="left" valign="top">&bull; <a href="#Configuring-TGDB" accesskey="5">Configuring TGDB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">TGDB configuration commands
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Highlighting-Groups" accesskey="6">Highlighting Groups</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">CGDB highlighting groups
+<tr><td align="left" valign="top">&bull; <a href="#Highlighting-Groups" accesskey="6">Highlighting Groups</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">TGDB highlighting groups
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Key-User-Interface" accesskey="7">Key User Interface</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">CGDB key user interface
+<tr><td align="left" valign="top">&bull; <a href="#Key-User-Interface" accesskey="7">Key User Interface</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">TGDB key user interface
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Terminal-Control-Flow" accesskey="8">Terminal Control Flow</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Allowing terminal control flow in CGDB
+<tr><td align="left" valign="top">&bull; <a href="#Terminal-Control-Flow" accesskey="8">Terminal Control Flow</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Allowing terminal control flow in TGDB
 </td></tr>
 <tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
 
-</pre></th></tr><tr><td align="left" valign="top">&bull; <a href="#Building-CGDB" accesskey="9">Building CGDB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Building CGDB from source
+</pre></th></tr><tr><td align="left" valign="top">&bull; <a href="#Building-TGDB" accesskey="9">Building TGDB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Building TGDB from source
 </td></tr>
 <tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
 
@@ -184,23 +184,23 @@ Place, Suite 330, Boston MA 02111-1307 USA
 <p>
 Next: <a href="#Invocation" accesskey="n" rel="next">Invocation</a>, Previous: <a href="#Top" accesskey="p" rel="prev">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Summary-of-CGDB"></a>
-<h2 class="unnumbered">Summary of CGDB</h2>
+<a name="Summary-of-TGDB"></a>
+<h2 class="unnumbered">Summary of TGDB</h2>
 
-<p>CGDB is a curses-based interface to the GNU Debugger (GDB).  The goal of CGDB 
+<p>TGDB is a curses-based interface to the GNU Debugger (GDB).  The goal of TGDB 
 is to be lightweight and responsive; not encumbered with unnecessary features.
 </p>
 <p>The interface is designed to deliver the familiar GDB text interface, with a 
 split screen showing the source as it executes.  The UI is modeled on the 
 classic Unix text editor, vi.  Those familiar with vi should feel right at 
-home using CGDB.
+home using TGDB.
 </p>
 <p>The library responsible for communicating with GDB is called gdbwire.
 Those wanting to develop other interfaces to GDB are welcome to use gdbwire 
 as the basis for their program.  Many of the headaches of parsing GDB&rsquo;s output 
 and annotations can be avoided by using it.
 </p>
-<p>Some features offered by CGDB are:
+<p>Some features offered by TGDB are:
 </p>
 <ul>
 <li> Syntax-highlighted source window
@@ -216,16 +216,16 @@ and annotations can be avoided by using it.
 <a name="Invocation"></a>
 <div class="header">
 <p>
-Next: <a href="#Understanding-CGDB" accesskey="n" rel="next">Understanding CGDB</a>, Previous: <a href="#Summary" accesskey="p" rel="prev">Summary</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Understanding-TGDB" accesskey="n" rel="next">Understanding TGDB</a>, Previous: <a href="#Summary" accesskey="p" rel="prev">Summary</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Getting-In-and-Out-of-CGDB"></a>
-<h2 class="chapter">1 Getting In and Out of CGDB</h2>
-<a name="index-invocation-CGDB"></a>
+<a name="Getting-In-and-Out-of-TGDB"></a>
+<h2 class="chapter">1 Getting In and Out of TGDB</h2>
+<a name="index-invocation-TGDB"></a>
 
-<p>This chapter discusses how to start CGDB, and how to get out of it.
+<p>This chapter discusses how to start TGDB, and how to get out of it.
 The essentials are:
 </p><ul>
-<li> type &lsquo;<samp>cgdb</samp>&rsquo; to start CGDB.
+<li> type &lsquo;<samp>tgdb</samp>&rsquo; to start TGDB.
 
 </li><li> type <kbd>quit</kbd> or <kbd>C-d</kbd> in the GDB window to exit.
 
@@ -234,30 +234,30 @@ currently hanging, or operating a long command.
 </li></ul>
 
 <hr>
-<a name="Understanding-CGDB"></a>
+<a name="Understanding-TGDB"></a>
 <div class="header">
 <p>
-Next: <a href="#Controlling-CGDB" accesskey="n" rel="next">Controlling CGDB</a>, Previous: <a href="#Invocation" accesskey="p" rel="prev">Invocation</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Controlling-TGDB" accesskey="n" rel="next">Controlling TGDB</a>, Previous: <a href="#Invocation" accesskey="p" rel="prev">Invocation</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Understanding-the-core-concepts-of-CGDB"></a>
-<h2 class="chapter">2 Understanding the core concepts of CGDB</h2>
-<a name="index-understanding-CGDB"></a>
+<a name="Understanding-the-core-concepts-of-TGDB"></a>
+<h2 class="chapter">2 Understanding the core concepts of TGDB</h2>
+<a name="index-understanding-TGDB"></a>
 
 <a name="index-status-bar"></a>
-<a name="index-CGDB-mode"></a>
+<a name="index-TGDB-mode"></a>
 <a name="index-GDB-mode"></a>
-<p>The CGDB user interface currently consists of two windows and a status bar.  
+<p>The TGDB user interface currently consists of two windows and a status bar.  
 The source window is currently on the top and the GDB window is on the 
 bottom.  The <em>status bar</em> currently separates the two windows.
 </p>
 <p>The interface has several modes depending on which window is focused.  
-<em>CGDB mode</em> is when the source window is focused and <em>GDB mode</em> is when 
+<em>TGDB mode</em> is when the source window is focused and <em>GDB mode</em> is when 
 the GDB window is focused.
 </p>
-<p>Beginning with CGDB version 1.0, the windows are movable,
+<p>Beginning with TGDB version 1.0, the windows are movable,
 and the user will be able to create as many or as few that is desired. 
 Currently however, all of my time is spent developing the interface between
-CGDB and GDB. Once this is complete, the UI of CGDB will become much more 
+TGDB and GDB. Once this is complete, the UI of TGDB will become much more 
 polished.  If you are a ncurses developer, and have spare time to work on this
 task, please contact me.
 </p>
@@ -278,7 +278,7 @@ task, please contact me.
 <a name="Source-Window"></a>
 <div class="header">
 <p>
-Next: <a href="#GDB-Window" accesskey="n" rel="next">GDB Window</a>, Up: <a href="#Understanding-CGDB" accesskey="u" rel="up">Understanding CGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#GDB-Window" accesskey="n" rel="next">GDB Window</a>, Up: <a href="#Understanding-TGDB" accesskey="u" rel="up">Understanding TGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Understanding-the-source-window_002e"></a>
 <h3 class="section">2.1 Understanding the source window.</h3>
@@ -287,32 +287,32 @@ Next: <a href="#GDB-Window" accesskey="n" rel="next">GDB Window</a>, Up: <a href
 <p>The <em>source window</em> is the window that provides you a view of the source 
 code that the debugged program is made up of.  It will display to the user a 
 single source file at a time.  While the user is debugging, via <code>next</code> 
-and <code>step</code>, CGDB will update the source file and line number to keep you 
+and <code>step</code>, TGDB will update the source file and line number to keep you 
 informed as to where GDB is debugging.
 </p>
-<p>CGDB has several features that make debugging easier than using plain old GDB.  
+<p>TGDB has several features that make debugging easier than using plain old GDB.  
 One feature you will notice right away while debugging a C, C++ or ADA program, 
 is that the source files are syntax highlighted.  This allows the user to 
 easily navigate through the source file to look for certain places in the 
 source code.  If you would like to see another source language highlighted, 
 contact us.  To understanding how to navigate through the source window look
-at the commands in <a href="#CGDB-Mode">CGDB Mode</a>.
+at the commands in <a href="#TGDB-Mode">TGDB Mode</a>.
 </p>
-<p>In addition to showing the source code, CGDB also displays to the user the 
+<p>In addition to showing the source code, TGDB also displays to the user the 
 currently executing line. The line number will be highlighted green, to
 represent that the particular line, is the current line being debugged by GDB.
-Also, CGDB will display an arrow extending from the line number, to the 
-source line.  You can configure what type of display CGDB uses with the
+Also, TGDB will display an arrow extending from the line number, to the 
+source line.  You can configure what type of display TGDB uses with the
 <code>:set executinglinedisplay</code> configuration option. By default,
 the <code>longarrow</code> display is used.
 </p>
 <p>As you navigate through the source window, the current line the cursor is
 on will be highlighted with a block.  This simply helps you keep track of
-where you are in the file. You can configure what type of display CGDB uses
+where you are in the file. You can configure what type of display TGDB uses
 with the <code>:set selectedlinedisplay</code> configuration option. By deafult,
 the <code>block</code> display is used.
 </p>
-<p>Also, you can set or delete breakpoints in CGDB from the source window.  Simply
+<p>Also, you can set or delete breakpoints in TGDB from the source window.  Simply
 navigate to the line that you are interested in setting a breakpoint, and hit
 the space bar.  This will set a breakpoint on the line if one did not already 
 exist.  The line number should turn red to indicate that a breakpoint has 
@@ -321,48 +321,48 @@ disable the breakpoint, the line number will turn yellow, to represent the
 disabled breakpoint.
 </p>
 <a name="index-regular-expression-search"></a>
-<p>CGDB also supports regular expression searching within the source window.  If
+<p>TGDB also supports regular expression searching within the source window.  If
 you type <kbd>/</kbd> or <kbd>?</kbd> you can search in the source window for a string
 of interest.  The C library regular expression functions are used to perform 
 this search, which honors things like &lsquo;<samp>*</samp>&rsquo; or &lsquo;<samp>+</samp>&rsquo;.
 </p>
 <p>The full list of commands that are available in the source window is in
-<a href="#CGDB-Mode">CGDB Mode</a>.
+<a href="#TGDB-Mode">TGDB Mode</a>.
 </p>
 <hr>
 <a name="GDB-Window"></a>
 <div class="header">
 <p>
-Next: <a href="#File-Dialog-Window" accesskey="n" rel="next">File Dialog Window</a>, Previous: <a href="#Source-Window" accesskey="p" rel="prev">Source Window</a>, Up: <a href="#Understanding-CGDB" accesskey="u" rel="up">Understanding CGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#File-Dialog-Window" accesskey="n" rel="next">File Dialog Window</a>, Previous: <a href="#Source-Window" accesskey="p" rel="prev">Source Window</a>, Up: <a href="#Understanding-TGDB" accesskey="u" rel="up">Understanding TGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Understanding-the-GDB-window_002e"></a>
 <h3 class="section">2.2 Understanding the GDB window.</h3>
 <a name="index-GDB-window"></a>
 
 <a name="index-GDB-window-1"></a>
-<p>The <em>GDB window</em> is how CGDB allows the user to interface with the GNU 
+<p>The <em>GDB window</em> is how TGDB allows the user to interface with the GNU 
 debugger.  If you wish to pass a command to GDB, simply type it into this 
 window and GDB will receive the command.  This interface is intended to be 
 100% identical to using GDB on a terminal.
 </p>
-<p>There is a limited set of keys that can be typed into this window that CGDB
+<p>There is a limited set of keys that can be typed into this window that TGDB
 interprets and handles, instead of sending to GDB.  They are all available in
 <a href="#GDB-Mode">GDB Mode</a>.
 </p>
-<p>CGDB attempts to buffer commands the same way they would be if you typed them
+<p>TGDB attempts to buffer commands the same way they would be if you typed them
 at the terminal.  So, if you type several commands before a single one 
 finishes, they will each be run in order.  There will be no way to stop these
 commands from being run besides from typing <kbd>Ctrl-C</kbd>, like you would at any
 normal terminal when working with GDB.
 </p>
 <a name="index-regular-expression-search-1"></a>
-<p>CGDB also supports regular expression searching within the GDB window.
+<p>TGDB also supports regular expression searching within the GDB window.
 </p>
 <hr>
 <a name="File-Dialog-Window"></a>
 <div class="header">
 <p>
-Next: <a href="#Status-Bar" accesskey="n" rel="next">Status Bar</a>, Previous: <a href="#GDB-Window" accesskey="p" rel="prev">GDB Window</a>, Up: <a href="#Understanding-CGDB" accesskey="u" rel="up">Understanding CGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Status-Bar" accesskey="n" rel="next">Status Bar</a>, Previous: <a href="#GDB-Window" accesskey="p" rel="prev">GDB Window</a>, Up: <a href="#Understanding-TGDB" accesskey="u" rel="up">Understanding TGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Understanding-the-file-dialog-window_002e"></a>
 <h3 class="section">2.3 Understanding the file dialog window.</h3>
@@ -389,69 +389,69 @@ lot of time as the number of files grow.
 <a name="Status-Bar"></a>
 <div class="header">
 <p>
-Next: <a href="#Switching-Windows" accesskey="n" rel="next">Switching Windows</a>, Previous: <a href="#File-Dialog-Window" accesskey="p" rel="prev">File Dialog Window</a>, Up: <a href="#Understanding-CGDB" accesskey="u" rel="up">Understanding CGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Switching-Windows" accesskey="n" rel="next">Switching Windows</a>, Previous: <a href="#File-Dialog-Window" accesskey="p" rel="prev">File Dialog Window</a>, Up: <a href="#Understanding-TGDB" accesskey="u" rel="up">Understanding TGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Understanding-the-status-bar_002e"></a>
 <h3 class="section">2.4 Understanding the status bar.</h3>
 <a name="index-status-bar-1"></a>
 
 <a name="index-status-bar-2"></a>
-<p>The <em>status bar</em> is the general purpose way for CGDB to show the user 
+<p>The <em>status bar</em> is the general purpose way for TGDB to show the user 
 which commands they are currently typing or report errors to the user when 
-they occur.  CGDB does not use popup&rsquo;s or other forms of I/O to alert the 
+they occur.  TGDB does not use popup&rsquo;s or other forms of I/O to alert the 
 user of information or problems.
 </p>
-<p>While CGDB is running, you can configure it with any of the commands that 
-are valid in CGDB&rsquo;s configuration file.  Simply type <kbd>:</kbd> in the source 
+<p>While TGDB is running, you can configure it with any of the commands that 
+are valid in TGDB&rsquo;s configuration file.  Simply type <kbd>:</kbd> in the source 
 window, and you will see the colon, and the rest of the command you type 
 appear in the status bar.  When you are finished typing the command that 
-you are interested in, type <code>enter</code>.  This will alert CGDB to execute 
+you are interested in, type <code>enter</code>.  This will alert TGDB to execute 
 the command.  If at any point you would like to cancel the current
-command typed so far, type the cgdb mode key.  This will put you back
-into CGDB mode.  For a description of the cgdb mode key, see 
+command typed so far, type the tgdb mode key.  This will put you back
+into TGDB mode.  For a description of the tgdb mode key, see 
 <a href="#Switching-Windows">Switching Windows</a>.
 </p>
 <p>The full list of commands that are available in the source window is in
-<a href="#Configuring-CGDB">Configuring CGDB</a>.
+<a href="#Configuring-TGDB">Configuring TGDB</a>.
 </p>
 <hr>
 <a name="Switching-Windows"></a>
 <div class="header">
 <p>
-Previous: <a href="#Status-Bar" accesskey="p" rel="prev">Status Bar</a>, Up: <a href="#Understanding-CGDB" accesskey="u" rel="up">Understanding CGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Previous: <a href="#Status-Bar" accesskey="p" rel="prev">Status Bar</a>, Up: <a href="#Understanding-TGDB" accesskey="u" rel="up">Understanding TGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Switch-between-windows"></a>
 <h3 class="section">2.5 Switch between windows</h3>
 <a name="index-switch-between-windows"></a>
 
-<p>When CGDB is invoked, the interface is in <em>GDB mode</em>.  A &lsquo;<samp>*</samp>&rsquo; at the 
+<p>When TGDB is invoked, the interface is in <em>GDB mode</em>.  A &lsquo;<samp>*</samp>&rsquo; at the 
 right of the status bar indicates that input will be passed to GDB.  To change
 the focus to the source window, hit the <tt class="key">ESC</tt> key.  The 
-<em>cgdb mode key</em> is the key that is responsible for switching the user
-into <em>CGDB mode</em> from a different mode.  The cgdb mode 
+<em>tgdb mode key</em> is the key that is responsible for switching the user
+into <em>TGDB mode</em> from a different mode.  The tgdb mode 
 key is defaulted to the <tt class="key">ESC</tt> key.  To change this value, look at the 
-configuration options for CGDB.  See <a href="#Configuring-CGDB">Configuring CGDB</a>.
+configuration options for TGDB.  See <a href="#Configuring-TGDB">Configuring TGDB</a>.
 </p>
-<p>The interface is now in <em>CGDB mode</em>.  To switch back into <em>GDB mode</em>, 
+<p>The interface is now in <em>TGDB mode</em>.  To switch back into <em>GDB mode</em>, 
 press <kbd>i</kbd>.  This syntax is based on the popular Unix text-editor, vi.
 </p>
 <hr>
-<a name="Controlling-CGDB"></a>
+<a name="Controlling-TGDB"></a>
 <div class="header">
 <p>
-Next: <a href="#Configuring-CGDB" accesskey="n" rel="next">Configuring CGDB</a>, Previous: <a href="#Understanding-CGDB" accesskey="p" rel="prev">Understanding CGDB</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Configuring-TGDB" accesskey="n" rel="next">Configuring TGDB</a>, Previous: <a href="#Understanding-TGDB" accesskey="p" rel="prev">Understanding TGDB</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="CGDB-commands"></a>
-<h2 class="chapter">3 CGDB commands</h2>
-<a name="index-controlling-CGDB"></a>
+<a name="TGDB-commands"></a>
+<h2 class="chapter">3 TGDB commands</h2>
+<a name="index-controlling-TGDB"></a>
 
-<p>CGDB can be controlled in a variety of different ways.  Each mode that CGDB 
-is in acts differently. Currently CGDB implicitly changes modes depending on 
+<p>TGDB can be controlled in a variety of different ways.  Each mode that TGDB 
+is in acts differently. Currently TGDB implicitly changes modes depending on 
 which window is active.  The following information will help you determine 
 what commands are accessible during which modes.
 </p>
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#CGDB-Mode" accesskey="1">CGDB Mode</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Commands available during CGDB mode
+<tr><td align="left" valign="top">&bull; <a href="#TGDB-Mode" accesskey="1">TGDB Mode</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Commands available during TGDB mode
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#GDB-Mode" accesskey="2">GDB Mode</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Commands available during GDB mode
 </td></tr>
@@ -460,22 +460,22 @@ what commands are accessible during which modes.
 </table>
 
 <hr>
-<a name="CGDB-Mode"></a>
+<a name="TGDB-Mode"></a>
 <div class="header">
 <p>
-Next: <a href="#GDB-Mode" accesskey="n" rel="next">GDB Mode</a>, Up: <a href="#Controlling-CGDB" accesskey="u" rel="up">Controlling CGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#GDB-Mode" accesskey="n" rel="next">GDB Mode</a>, Up: <a href="#Controlling-TGDB" accesskey="u" rel="up">Controlling TGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Commands-available-during-CGDB-mode"></a>
-<h3 class="section">3.1 Commands available during CGDB mode</h3>
-<a name="index-commands_002c-in-CGDB-mode"></a>
+<a name="Commands-available-during-TGDB-mode"></a>
+<h3 class="section">3.1 Commands available during TGDB mode</h3>
+<a name="index-commands_002c-in-TGDB-mode"></a>
 
-<p>When you are in the source window, you are implicitly in <em>CGDB mode</em>.  
+<p>When you are in the source window, you are implicitly in <em>TGDB mode</em>.  
 All of the below commands are available during this mode.  This mode is 
 primarily available for the user to view the current source file, search it, 
 or switch to a different mode.
 </p>
 <dl compact="compact">
-<dt><kbd>cgdbmodekey</kbd></dt>
+<dt><kbd>tgdbmodekey</kbd></dt>
 <dd><p>Puts the user into command mode. However, you are already in this mode.
 This is defaulted to the <tt class="key">ESC</tt> key.
 </p>
@@ -634,7 +634,7 @@ valid between files. If there are ten files, each file can have a mark
 <a name="GDB-Mode"></a>
 <div class="header">
 <p>
-Next: <a href="#File-Dialog-Mode" accesskey="n" rel="next">File Dialog Mode</a>, Previous: <a href="#CGDB-Mode" accesskey="p" rel="prev">CGDB Mode</a>, Up: <a href="#Controlling-CGDB" accesskey="u" rel="up">Controlling CGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#File-Dialog-Mode" accesskey="n" rel="next">File Dialog Mode</a>, Previous: <a href="#TGDB-Mode" accesskey="p" rel="prev">TGDB Mode</a>, Up: <a href="#Controlling-TGDB" accesskey="u" rel="up">Controlling TGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Commands-available-during-GDB-mode"></a>
 <h3 class="section">3.2 Commands available during GDB mode</h3>
@@ -649,7 +649,7 @@ by typing <kbd>q</kbd>, <kbd>i</kbd> or <kbd>enter</kbd>.
 <p>The commands available in <a href="#GDB-Mode">GDB Mode</a> when in command mode are:
 </p>
 <dl compact="compact">
-<dt><kbd>cgdbmodekey</kbd></dt>
+<dt><kbd>tgdbmodekey</kbd></dt>
 <dd><p>Switch back to source window.  This is defaulted to the <tt class="key">ESC</tt> key.
 </p>
 </dd>
@@ -658,14 +658,14 @@ by typing <kbd>q</kbd>, <kbd>i</kbd> or <kbd>enter</kbd>.
 </p></dd>
 </dl>
 
-<p>When in command mode, CGDB will pass along any other keys to the readline
+<p>When in command mode, TGDB will pass along any other keys to the readline
 library. When readline has determined that a command has been received, it
-alerts CGDB, and a command is then sent to GDB.
+alerts TGDB, and a command is then sent to GDB.
 </p>
 <p>The commands available in <a href="#GDB-Mode">GDB Mode</a> when in scroll mode are:
 </p>
 <dl compact="compact">
-<dt><kbd>cgdbmodekey</kbd></dt>
+<dt><kbd>tgdbmodekey</kbd></dt>
 <dd><p>Switch back to source window.  This is defaulted to the <tt class="key">ESC</tt> key.
 </p>
 </dd>
@@ -740,7 +740,7 @@ alerts CGDB, and a command is then sent to GDB.
 <a name="File-Dialog-Mode"></a>
 <div class="header">
 <p>
-Previous: <a href="#GDB-Mode" accesskey="p" rel="prev">GDB Mode</a>, Up: <a href="#Controlling-CGDB" accesskey="u" rel="up">Controlling CGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Previous: <a href="#GDB-Mode" accesskey="p" rel="prev">GDB Mode</a>, Up: <a href="#Controlling-TGDB" accesskey="u" rel="up">Controlling TGDB</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Commands-available-during-the-file-dialog-mode"></a>
 <h3 class="section">3.3 Commands available during the file dialog mode</h3>
@@ -830,30 +830,30 @@ dialog.
 </dl>
 
 <hr>
-<a name="Configuring-CGDB"></a>
+<a name="Configuring-TGDB"></a>
 <div class="header">
 <p>
-Next: <a href="#Highlighting-Groups" accesskey="n" rel="next">Highlighting Groups</a>, Previous: <a href="#Controlling-CGDB" accesskey="p" rel="prev">Controlling CGDB</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Highlighting-Groups" accesskey="n" rel="next">Highlighting Groups</a>, Previous: <a href="#Controlling-TGDB" accesskey="p" rel="prev">Controlling TGDB</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="CGDB-configuration-commands"></a>
-<h2 class="chapter">4 CGDB configuration commands</h2>
-<a name="index-configuring-CGDB"></a>
+<a name="TGDB-configuration-commands"></a>
+<h2 class="chapter">4 TGDB configuration commands</h2>
+<a name="index-configuring-TGDB"></a>
 
-<p>By default, CGDB stores its user-specific files (such as command history,
-program logs, and config files) in the <samp>~/.cgdb/</samp> directory.  This
-location is configurable; if the environment variable <code>CGDB_DIR</code> is set
-to a directory name, CGDB will use the specified directory instead of
-<samp>~/.cgdb/</samp>. 
+<p>By default, TGDB stores its user-specific files (such as command history,
+program logs, and config files) in the <samp>~/.tgdb/</samp> directory.  This
+location is configurable; if the environment variable <code>TGDB_DIR</code> is set
+to a directory name, TGDB will use the specified directory instead of
+<samp>~/.tgdb/</samp>. 
 </p>
-<p>There may be several features that you find useful in CGDB.  CGDB is capable
+<p>There may be several features that you find useful in TGDB.  TGDB is capable
 of automating any of these commands through the use of the config file called
-<samp>cgdbrc</samp>.  It looks in <code>$CGDB_DIR</code> for that file, or in
-<code>HOME</code><samp>/.cgdb/</samp> if the <code>CGDB_DIR</code> environment variable is not
-set.  If the <samp>cgdbrc</samp> file exists, CGDB executes each one of its lines
+<samp>tgdbrc</samp>.  It looks in <code>$TGDB_DIR</code> for that file, or in
+<code>HOME</code><samp>/.tgdb/</samp> if the <code>TGDB_DIR</code> environment variable is not
+set.  If the <samp>tgdbrc</samp> file exists, TGDB executes each one of its lines
 in order.  It is as if the user typed in all the commands into the status bar
 after the tui was initialized.
 </p>
-<p>The following variables change the behavior of some aspect of CGDB.  Many
+<p>The following variables change the behavior of some aspect of TGDB.  Many
 of these commands may be abbreviated in some way, and all boolean commands
 my be negated by appending &lsquo;<samp>no</samp>&rsquo; to the front.  For example: 
 <kbd>:set ignorecase</kbd> turns on case-insensitive searching; while
@@ -862,46 +862,46 @@ my be negated by appending &lsquo;<samp>no</samp>&rsquo; to the front.  For exam
 <dl compact="compact">
 <dt><kbd>:set asr</kbd></dt>
 <dt><kbd>:set autosourcereload</kbd></dt>
-<dd><p>If this is on, CGDB will automatically reload a source file if it has 
-changed since CGDB has opened it.  If it is off, the file will never be 
-reloaded, until you start CGDB again. The default is on.
+<dd><p>If this is on, TGDB will automatically reload a source file if it has 
+changed since TGDB has opened it.  If it is off, the file will never be 
+reloaded, until you start TGDB again. The default is on.
 This feature is useful when you are debugging a program, then you modify 
 a source file, recompile, and type <kbd>r</kbd> in GDB&rsquo;s CLI window. The file in 
-this case will be updated to show the new version.  Note, CGDB only looks at 
+this case will be updated to show the new version.  Note, TGDB only looks at 
 the timestamp of the source file to determine if it has changed. So if 
-you modify the source file, and didn&rsquo;t recompile yet, CGDB will still 
+you modify the source file, and didn&rsquo;t recompile yet, TGDB will still 
 pick up on the changes.
 </p>
 </dd>
-<dt><kbd>:set cgdbmodekey=<var>key</var></kbd></dt>
-<dd><p>This option is used to determine what key puts CGDB into <em>CGDB Mode</em>.
+<dt><kbd>:set tgdbmodekey=<var>key</var></kbd></dt>
+<dd><p>This option is used to determine what key puts TGDB into <em>TGDB Mode</em>.
 By default, the <kbd>ESC</kbd> key is used.  <var>key</var> can be any normal key
 on the keyboard.  It can also be any keycode, as long as the keycode notation 
 is used.  This option is especially useful when the user wants to use
-readline in vi mode.  If the user types <code>set cgdbmodekey=&lt;PageUp&gt;</code> 
-then the <kbd>Page Up</kbd> key will put CGDB into CGDB mode and the <kbd>ESC</kbd>
+readline in vi mode.  If the user types <code>set tgdbmodekey=&lt;PageUp&gt;</code> 
+then the <kbd>Page Up</kbd> key will put TGDB into TGDB mode and the <kbd>ESC</kbd>
 key will flow through to readline.
 </p>
 </dd>
 <dt><kbd>:set color</kbd></dt>
-<dd><p>This option is used to enable or disable color support in CGDB.
-The default is on.  When enabled, CGDB can display color when appropriate.
+<dd><p>This option is used to enable or disable color support in TGDB.
+The default is on.  When enabled, TGDB can display color when appropriate.
 This typically occurs when syntax highlighting source files in the source
-viewer.  When disabled, CGDB will not display colors.  It may instead use
+viewer.  When disabled, TGDB will not display colors.  It may instead use
 other terminal attributes for syntax highlighting, including bold and
 reverse attributes.  See the <code>highlight</code> commamnd and look for the
 &lsquo;<samp>cterm</samp>&rsquo; option.
 </p>
-<p>It should be noted that even when color is enabled in CGDB, if ncurses
-declares that the terminal does not support colors, CGDB will not use colors.
+<p>It should be noted that even when color is enabled in TGDB, if ncurses
+declares that the terminal does not support colors, TGDB will not use colors.
 </p>
 </dd>
 <dt><kbd>:set dwc</kbd></dt>
 <dt><kbd>:set debugwincolor</kbd></dt>
 <dd><p>This option controls if the debug window will display colors or not.
 The default value is on.  When enabled, if GDB or the program being debugged
-output an ANSI escape code representing color, then CGDB will display the
-corresponding color instead of the escape code.  When disabled, CGDB will
+output an ANSI escape code representing color, then TGDB will display the
+corresponding color instead of the escape code.  When disabled, TGDB will
 display the ANSI escape code in the debug window.
 See <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors">https://en.wikipedia.org/wiki/ANSI_escape_code#Colors</a> to learn
 more about ANSI escape codes.
@@ -909,10 +909,10 @@ more about ANSI escape codes.
 </dd>
 <dt><kbd>:set dis</kbd></dt>
 <dt><kbd>:set disasm</kbd></dt>
-<dd><p>This option is used to enable or disable showing assembly code in cgdb.
-The default value is off.  When off, CGDB will display the source code
-to the user.  When no source code is available, CGDB will display the
-assembly code.  When this option is enabled, CGDB will display the mixed
+<dd><p>This option is used to enable or disable showing assembly code in tgdb.
+The default value is off.  When off, TGDB will display the source code
+to the user.  When no source code is available, TGDB will display the
+assembly code.  When this option is enabled, TGDB will display the mixed
 source and assembly when the source code is enabled and assembly code
 when the source code is not available. Please note that when assembly
 mode is displayed, it&rsquo;s displayed per function instead of per file.
@@ -963,15 +963,15 @@ draws an inverse block (cursor) next to the source code being selected.
 </dd>
 <dt><kbd>:set showmarks</kbd></dt>
 <dd><p>This option controls if the source window will show marks or not.
-The default value is on. When enabled, CGDB will show the marks that
+The default value is on. When enabled, TGDB will show the marks that
 the user has set in the vertical bar in the source window separating
 the line number from the source code.
 </p>
 </dd>
 <dt><kbd>:set sdc</kbd></dt>
 <dt><kbd>:set showdebugcommands</kbd></dt>
-<dd><p>If this is on, CGDB will show all of the commands that it sends to GDB. 
-If it is off, CGDB will not show the commands that it gives to GDB. 
+<dd><p>If this is on, TGDB will show all of the commands that it sends to GDB. 
+If it is off, TGDB will not show the commands that it gives to GDB. 
 The default is off. 
 </p>
 </dd>
@@ -981,7 +981,7 @@ The default is off.
 <var>style</var>.  Possible values for <var>syntax</var> are &lsquo;<samp>c</samp>&rsquo;, &lsquo;<samp>asm</samp>&rsquo;,
 &lsquo;<samp>d</samp>&rsquo;, &lsquo;<samp>go</samp>&rsquo;, &lsquo;<samp>ada</samp>&rsquo;, &lsquo;<samp>rust</samp>&rsquo;, &lsquo;<samp>off</samp>&rsquo;, &lsquo;<samp>no</samp>&rsquo;,
 &lsquo;<samp>on</samp>&rsquo; or &lsquo;<samp>yes</samp>&rsquo;.  Normally, the user will never have to do this,
-since CGDB automatically detects what syntax a file should be based on
+since TGDB automatically detects what syntax a file should be based on
 its file extension.  However, this feature can currently be useful for
 debugging purposes. &lsquo;<samp>on</samp>&rsquo; and &lsquo;<samp>yes</samp>&rsquo; enable syntax highlighting based
 on the source files extension. &lsquo;<samp>off</samp>&rsquo; and &lsquo;<samp>no</samp>&rsquo; disable syntax
@@ -992,13 +992,13 @@ independent of the source files extension.
 <dt><kbd>:set to</kbd></dt>
 <dt><kbd>:set timeout</kbd></dt>
 <dd><p>This option is used along with the <var>ttimeout</var> option to determine the 
-behavior CGDB should have when it receives part of a mapped key sequence or 
-a keyboard code sequence.  If this option is on, CGDB will time out on both
+behavior TGDB should have when it receives part of a mapped key sequence or 
+a keyboard code sequence.  If this option is on, TGDB will time out on both
 user defined mappings and on key codes from the keyboard.  If this option 
-is off, user defined mappings will not be timed out on.  In this case, CGDB
+is off, user defined mappings will not be timed out on.  In this case, TGDB
 will determine if it should time out on key codes from the keyboard by
-examining the <var>ttimeout</var> option.  To determine how CGDB will time out
-on mappings and key codes, and what time out lengths CGDB will use, please 
+examining the <var>ttimeout</var> option.  To determine how TGDB will time out
+on mappings and key codes, and what time out lengths TGDB will use, please 
 refer to the chart in <a href="#Key-User-Interface">Key User Interface</a>.  The default value for this
 option is on.
 </p>
@@ -1006,9 +1006,9 @@ option is on.
 <dt><kbd>:set tm=<var>delay</var></kbd></dt>
 <dt><kbd>:set timeoutlen=<var>delay</var></kbd></dt>
 <dd><p>This option is used along with the <var>ttimeoutlen</var> option.  It 
-represents the number of milliseconds that CGDB should wait for a key code
+represents the number of milliseconds that TGDB should wait for a key code
 from the keyboard or for a mapped key sequence to complete.  If <var>delay</var> is 
-0, CGDB immediately accepts each character it receives.  This will prevent any
+0, TGDB immediately accepts each character it receives.  This will prevent any
 mappings or key codes to complete.  <var>delay</var> may be any value between 
 0 and 10000, inclusive.  The default setting for the <var>delay</var> variable is 
 1000 (one second).
@@ -1016,11 +1016,11 @@ mappings or key codes to complete.  <var>delay</var> may be any value between
 </dd>
 <dt><kbd>:set ttimeout</kbd></dt>
 <dd><p>This option is used along with the <var>timeout</var> option to determine the 
-behavior CGDB should have when it receives part of keyboard code sequence.  
-If this option is on, CGDB will time out on key codes from the keyboard.  If
-this option is off, CGDB will determine if it should time out on key codes
+behavior TGDB should have when it receives part of keyboard code sequence.  
+If this option is on, TGDB will time out on key codes from the keyboard.  If
+this option is off, TGDB will determine if it should time out on key codes
 from the keyboard by examining the <var>timeout</var> option.  To determine how
-CGDB will time out on key codes, what what time length it will use, please
+TGDB will time out on key codes, what what time length it will use, please
 refer to the chart in <a href="#Key-User-Interface">Key User Interface</a>.  The default value for this 
 option is on.
 </p>
@@ -1029,8 +1029,8 @@ option is on.
 <dt><kbd>:set ttm=<var>delay</var></kbd></dt>
 <dt><kbd>:set ttimeoutlen=<var>delay</var></kbd></dt>
 <dd><p>This option is used along with the <var>ttimeoutlen</var> option.  It 
-represents the number of milliseconds that CGDB should wait for a key code
-from the keyboard.  If <var>delay</var> is 0, CGDB immediately accepts each character 
+represents the number of milliseconds that TGDB should wait for a key code
+from the keyboard.  If <var>delay</var> is 0, TGDB immediately accepts each character 
 it receives.  This will prevent any key codes to complete.  <var>delay</var> may 
 be any value between 0 and 10000, inclusive.  The default setting for the 
 <var>delay</var> variable is 100 (one tenth of a second).
@@ -1058,7 +1058,7 @@ when <var>winsplitorientation</var> is set to &lsquo;<samp>vertical</samp>&rsquo
 </dd>
 <dt><kbd>:set winsplit=<var>style</var></kbd></dt>
 <dd><p>Set the split point between source and GDB window.  This is especially useful
-as an init setting in your <samp>cgdbrc</samp> file.  See <a href="#Configuring-CGDB">Configuring CGDB</a>.  The 
+as an init setting in your <samp>tgdbrc</samp> file.  See <a href="#Configuring-TGDB">Configuring TGDB</a>.  The 
 possible values for <var>style</var> are &lsquo;<samp>src_full</samp>&rsquo;, &lsquo;<samp>src_big</samp>&rsquo;, 
 &lsquo;<samp>even</samp>&rsquo;, &lsquo;<samp>gdb_big</samp>&rsquo;, and &lsquo;<samp>gdb_full</samp>&rsquo;.
 </p>
@@ -1068,7 +1068,7 @@ possible values for <var>style</var> are &lsquo;<samp>src_full</samp>&rsquo;, &l
 <dd><p>Sets the window split orientation to either &lsquo;<samp>horizontal</samp>&rsquo; (which places
 the source window above and the GDB window below), or &lsquo;<samp>vertical</samp>&rsquo; (
 hich places the source window on the left and the GDB window on the right). 
-See <a href="#Configuring-CGDB">Configuring CGDB</a>.
+See <a href="#Configuring-TGDB">Configuring TGDB</a>.
 </p>
 </dd>
 <dt><kbd>:set ws</kbd></dt>
@@ -1088,7 +1088,7 @@ See <a href="#Configuring-CGDB">Configuring CGDB</a>.
 <dt><kbd>:e</kbd></dt>
 <dt><kbd>:edit</kbd></dt>
 <dd><p>reloads the file in the source window.  this can be useful if the file has 
-changed since it was opened by cgdb.
+changed since it was opened by tgdb.
 </p>
 </dd>
 <dt><kbd>:f</kbd></dt>
@@ -1102,7 +1102,7 @@ changed since it was opened by cgdb.
 </p>
 </dd>
 <dt><kbd>:logo</kbd></dt>
-<dd><p>This will display one of CGDB&rsquo;s logos in the <em>source window</em>.
+<dd><p>This will display one of TGDB&rsquo;s logos in the <em>source window</em>.
 </p>
 </dd>
 <dt><kbd>:hi <var>group</var> cterm=<var>attributes</var> ctermfg=<var>color</var> ctermbg=<var>color</var> term=<var>attributes</var></kbd></dt>
@@ -1114,8 +1114,8 @@ mimics vim&rsquo;s &ldquo;highlight&rdquo; command.  Possible values for <var>gr
 <p>You can give as many or as few of the name=value pairs as you wish, in any 
 order.  &lsquo;<samp>ctermfg</samp>&rsquo; and &lsquo;<samp>ctermbg</samp>&rsquo; set the foreground and background 
 colors.  These can be specified by color number or by using the same color 
-names that vim uses.  When CGDB is linked with ncurses, the number you use to
-represent the color can be between -1 and COLORS.  When CGDB is linked against
+names that vim uses.  When TGDB is linked with ncurses, the number you use to
+represent the color can be between -1 and COLORS.  When TGDB is linked against
 curses, it must be between 0 and COLORS.  
 </p>
 <p>&lsquo;<samp>cterm</samp>&rsquo; sets the video attributes for color terminals.  &lsquo;<samp>term</samp>&rsquo; sets
@@ -1142,7 +1142,7 @@ the video attributes for monochrome terminals.  Some examples are,
 </dd>
 <dt><kbd>:q</kbd></dt>
 <dt><kbd>:quit</kbd></dt>
-<dd><p>Quit CGDB.
+<dd><p>Quit TGDB.
 </p>
 </dd>
 <dt><kbd>:r</kbd></dt>
@@ -1182,14 +1182,14 @@ the video attributes for monochrome terminals.  Some examples are,
 </p>
 </dd>
 <dt><kbd>:map <var>lhs</var> <var>rhs</var></kbd></dt>
-<dd><p>Create a new mapping or overwrite an existing mapping in CGDB mode.  
-After the command is run, if <var>lhs</var> is typed, CGDB will get <var>rhs</var> 
+<dd><p>Create a new mapping or overwrite an existing mapping in TGDB mode.  
+After the command is run, if <var>lhs</var> is typed, TGDB will get <var>rhs</var> 
 instead.  For more details on how to use the map command look in 
 <a href="#Using-Maps">Using Maps</a>.
 </p></dd>
 <dt><kbd>:unm <var>lhs</var></kbd></dt>
 <dt><kbd>:unmap <var>lhs</var></kbd></dt>
-<dd><p>Delete an existing mapping from CGDB mode.  <var>lhs</var> is what was typed
+<dd><p>Delete an existing mapping from TGDB mode.  <var>lhs</var> is what was typed
 in the left hand side when the user created the mapping.  For example, if 
 the user typed <code>:map a&lt;Space&gt;b foo</code> then the user could delete the
 existing mapping with <code>:unmap a&lt;Space&gt;b</code>.
@@ -1197,7 +1197,7 @@ existing mapping with <code>:unmap a&lt;Space&gt;b</code>.
 <dt><kbd>:im <var>lhs</var> <var>rhs</var></kbd></dt>
 <dt><kbd>:imap <var>lhs</var> <var>rhs</var></kbd></dt>
 <dd><p>Create a new mapping or overwrite an existing mapping in GDB mode.  
-After the command is run, if <var>lhs</var> is typed, CGDB will get <var>rhs</var> 
+After the command is run, if <var>lhs</var> is typed, TGDB will get <var>rhs</var> 
 instead.  For more details on how to use the map command look in 
 <a href="#Using-Maps">Using Maps</a>.
 </p></dd>
@@ -1214,32 +1214,32 @@ existing mapping with <code>:iunmap a&lt;Space&gt;b</code>.
 <a name="Highlighting-Groups"></a>
 <div class="header">
 <p>
-Next: <a href="#Key-User-Interface" accesskey="n" rel="next">Key User Interface</a>, Previous: <a href="#Configuring-CGDB" accesskey="p" rel="prev">Configuring CGDB</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Key-User-Interface" accesskey="n" rel="next">Key User Interface</a>, Previous: <a href="#Configuring-TGDB" accesskey="p" rel="prev">Configuring TGDB</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="CGDB-highlighting-groups"></a>
-<h2 class="chapter">5 CGDB highlighting groups</h2>
+<a name="TGDB-highlighting-groups"></a>
+<h2 class="chapter">5 TGDB highlighting groups</h2>
 <a name="index-highlighting-groups"></a>
 
-<p>CGDB is capable of using colors if the terminal it is run in supports them.  
-Until version 0.6.1, CGDB did not allow the user to configure these colors in
-any way.  CGDB color use is now fully configurable.
+<p>TGDB is capable of using colors if the terminal it is run in supports them.  
+Until version 0.6.1, TGDB did not allow the user to configure these colors in
+any way.  TGDB color use is now fully configurable.
 </p>
-<p>CGDB&rsquo;s modeled its use of color highlighting after vim.  Any data that will
+<p>TGDB&rsquo;s modeled its use of color highlighting after vim.  Any data that will
 be colored in the terminal is represented by a highlighting group.  
 A <em>highlighting group</em> represents data that should be formatted using
 foreground colors, background colors and attributes.  There are currently 
-several types of highlighting groups in CGDB.  There are syntax highlighting 
+several types of highlighting groups in TGDB.  There are syntax highlighting 
 groups, which represent syntax highlighting of sources files.  There are also 
-User Interface groups, which represent things like CGDB&rsquo;s logo, or the status 
+User Interface groups, which represent things like TGDB&rsquo;s logo, or the status 
 bar.
 </p>
 <p>Each highlighting group has a default set of attributes and colors associated 
 with it.  You can modify a highlighting groups properties by using the
-highlight command.  See <a href="#Configuring-CGDB">Configuring CGDB</a>.
+highlight command.  See <a href="#Configuring-TGDB">Configuring TGDB</a>.
 </p>
-<p>Note that CGDB currently supports using the same background color the terminal 
-was using before CGDB was started.  However, this only works when CGDB was
-linked with ncurses.  If you link CGDB with curses, then CGDB will force
+<p>Note that TGDB currently supports using the same background color the terminal 
+was using before TGDB was started.  However, this only works when TGDB was
+linked with ncurses.  If you link TGDB with curses, then TGDB will force
 the background to Black.
 </p>
 <table class="menu" border="0" cellspacing="0">
@@ -1285,12 +1285,12 @@ highlighting source files.
 </p></dd>
 </dl>
 
-<p>Below is a list of all the highlighting groups that CGDB will use when it is
+<p>Below is a list of all the highlighting groups that TGDB will use when it is
 displaying it&rsquo;s User Interface.
 </p>
 <dl compact="compact">
 <dt><code>StatusLine</code></dt>
-<dd><p>This represents the <em>status bar</em> in CGDB.  The file dialog&rsquo;s status 
+<dd><p>This represents the <em>status bar</em> in TGDB.  The file dialog&rsquo;s status 
 bar also uses this group.
 </p></dd>
 <dt><code>Search</code></dt>
@@ -1327,32 +1327,32 @@ window, the GDB window in scroll mode, or the <em>file dialog window</em>.
 <code>executinglinedisplay</code> option set to <code>block</code>.
 </p></dd>
 <dt><code>Breakpoint</code></dt>
-<dd><p>This represents the group that is used when CGDB displays a line that has a 
+<dd><p>This represents the group that is used when TGDB displays a line that has a 
 breakpoint set.
 </p></dd>
 <dt><code>DisabledBreakpoint</code></dt>
-<dd><p>This represents the group that is used when CGDB displays a line that has a 
+<dd><p>This represents the group that is used when TGDB displays a line that has a 
 disabled breakpoint set.
 </p></dd>
 <dt><code>SelectedLineNr</code></dt>
-<dd><p>This represents the group that is used when CGDB is displaying the currently
+<dd><p>This represents the group that is used when TGDB is displaying the currently
 selected line.  This is the line that the cursor is on.
 </p></dd>
 <dt><code>ExecutingLineNr</code></dt>
-<dd><p>This represents the group that is used when CGDB is displaying the currently
+<dd><p>This represents the group that is used when TGDB is displaying the currently
 executing line.
 </p></dd>
 <dt><code>ScrollModeStatus</code></dt>
-<dd><p>This represents the group that is used when CGDB is displaying the currently
+<dd><p>This represents the group that is used when TGDB is displaying the currently
 selected line number when in <a href="#GDB-Mode">GDB Mode</a> and the user is scrolling
 through the GDB buffer.
 </p></dd>
 <dt><code>Logo</code></dt>
-<dd><p>This is the group CGDB uses to display its logo on startup when no source 
+<dd><p>This is the group TGDB uses to display its logo on startup when no source 
 file can be auto detected.
 </p></dd>
 <dt><code>Mark</code></dt>
-<dd><p>This is the group CGDB uses to display a mark in the source window.
+<dd><p>This is the group TGDB uses to display a mark in the source window.
 Marks are displayed when the <code>showmarks</code> option is enabled.
 See the <code>showmarks</code> option for more detail.
 </p></dd>
@@ -1369,11 +1369,11 @@ Next: <a href="#Available-Colors" accesskey="n" rel="next">Available Colors</a>,
 <h3 class="section">5.2 The different attributes</h3>
 <a name="index-attributes"></a>
 
-<p>CGDB supports many of the attributes that curses provides.  It will apply the
+<p>TGDB supports many of the attributes that curses provides.  It will apply the
 attributes to the output window, but it is up to the terminal you are using
 to support such features.
 </p>
-<p>The list of attributes that CGDB currently supports is below.
+<p>The list of attributes that TGDB currently supports is below.
 </p>
 <dl compact="compact">
 <dt><code>normal</code></dt>
@@ -1413,8 +1413,8 @@ Previous: <a href="#Available-Attributes" accesskey="p" rel="prev">Available Att
 <h3 class="section">5.3 The different colors</h3>
 <a name="index-colors"></a>
 
-<p>CGDB supports several colors, depending on how many colors your terminal
-supports.  Below is a chart of the colors that CGDB provides.
+<p>TGDB supports several colors, depending on how many colors your terminal
+supports.  Below is a chart of the colors that TGDB provides.
 The values for each color represent the defines from the curses header
 file passed to init_pair() to ask curses to create a new color.
 </p>
@@ -1444,35 +1444,35 @@ file passed to init_pair() to ask curses to create a new color.
 <p>
 Next: <a href="#Terminal-Control-Flow" accesskey="n" rel="next">Terminal Control Flow</a>, Previous: <a href="#Highlighting-Groups" accesskey="p" rel="prev">Highlighting Groups</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="CGDB-key-user-interface"></a>
-<h2 class="chapter">6 CGDB key user interface</h2>
-<a name="index-CGDB-key-user-interface"></a>
+<a name="TGDB-key-user-interface"></a>
+<h2 class="chapter">6 TGDB key user interface</h2>
+<a name="index-TGDB-key-user-interface"></a>
 
-<p>The Key User Interface is how CGDB receives input from the user.  It is 
-usually referred to as the <em>KUI</em>.  CGDB simply asks the KUI for the next 
+<p>The Key User Interface is how TGDB receives input from the user.  It is 
+usually referred to as the <em>KUI</em>.  TGDB simply asks the KUI for the next 
 key the user typed and the KUI will provide it.  
 </p>
 <p>The KUI has 2 major responsibilities besides reading normal user input 
-and providing it to CGDB.  It needs to detect when the user has typed a 
+and providing it to TGDB.  It needs to detect when the user has typed a 
 user defined map or when the user has hit a special key on the keyboard.
 </p>
 <p>A user defined map, or simply <em>map</em>, is used to change the meaning
 of typed keys.  Some users may refer to this type of functionality as a 
 <em>macro</em>.  An example would be <code>map a b</code>.  If the user then typed 
 the <tt class="key">a</tt> character, the KUI would detect that it was mapped to <tt class="key">b</tt> 
-and return <tt class="key">b</tt> to CGDB.
+and return <tt class="key">b</tt> to TGDB.
 </p>
 <p>When the user types a special key on the keyboard, a <em>key code</em> is
-sent to CGDB.  Typically, keys like  <kbd>HOME</kbd>, <kbd>DEL</kbd>, <tt class="key">F1</tt>, etc,
+sent to TGDB.  Typically, keys like  <kbd>HOME</kbd>, <kbd>DEL</kbd>, <tt class="key">F1</tt>, etc,
 when pressed will send several characters to the application instead of just
 one character like a normal key does.  These characters combined are called a
 <em>key sequence</em>.  The KUI is responsible for assembling the key sequences 
-back together and reporting to CGDB that a particular key was typed by the 
+back together and reporting to TGDB that a particular key was typed by the 
 user.  The <kbd>ESC</kbd> key is special because typically most key codes start with 
 that key.  This usually gives all key codes a common first key in its key 
 sequence.  The KUI uses the terminfo database to determine what key sequences 
 are sent by which keycodes.  There are a few commonly used key sequences 
-that are hard coded into CGDB.
+that are hard coded into TGDB.
 </p>
 <p>A major challenge the KUI has to overcome is determining when a map or a 
 key sequence is received.  The KUI sometimes will need to read more than
@@ -1481,8 +1481,8 @@ one character to determine this.  For example, if the user has 2 maps,
 least the characters <tt class="key">a</tt> and <tt class="key">b</tt> before it could determine if the 
 user was going to type a map.  After the next key press, if the user types 
 <tt class="key">c</tt> or <tt class="key">d</tt> then a map was received and the KUI will return 
-<kbd>d e f</kbd> to CGDB.  Otherwise, no map was received and the KUI must return 
-<kbd>a b</kbd> to CGDB.
+<kbd>d e f</kbd> to TGDB.  Otherwise, no map was received and the KUI must return 
+<kbd>a b</kbd> to TGDB.
 </p>
 <p>The options <var>timeout</var>, <var>ttimeout</var>, <var>timeoutlen</var> and 
 <var>ttimeoutlen</var> can be used to tell the KUI if it should timeout on
@@ -1519,7 +1519,7 @@ far if a certain amount of time elapses between key presses.  This is
 obvious when the user is typing a map because the user must press each key
 individually.  For partial key sequences, this is less obvious.  That is 
 because the user only presses a single key, but multiple characters are sent 
-to CGDB.  The table below describes how the user can configure the KUI
+to TGDB.  The table below describes how the user can configure the KUI
 to time out on key codes or maps.  The <var>timeout</var> and <var>ttimeout</var>
 options control this functionality.
 </p>
@@ -1551,11 +1551,11 @@ option.
 possible to match a map or key code in this circumstance.
 </p>
 <p>A common problem could be that when the user types a special key like 
-the left or right arrows, CGDB will go into the source mode and not 
+the left or right arrows, TGDB will go into the source mode and not 
 perform the action requested by the user.  This typically means that the
 key code delay is to small.  If you try setting the option 
-<code>set ttimeoutlen=1000</code> CGDB should start acting like the user expects.
-If not, please report this to the CGDB mailing list.
+<code>set ttimeoutlen=1000</code> TGDB should start acting like the user expects.
+If not, please report this to the TGDB mailing list.
 </p>
 <hr>
 <a name="Using-Maps"></a>
@@ -1566,17 +1566,17 @@ Next: <a href="#Understanding-Keycodes" accesskey="n" rel="next">Understanding K
 <a name="Using-maps"></a>
 <h3 class="section">6.2 Using maps</h3>
 
-<p>CGDB fully supports the use of maps.  It allows the user to change the 
+<p>TGDB fully supports the use of maps.  It allows the user to change the 
 meaning of typed keys. For example, you could have the following map 
 <code>:map &lt;F2&gt; ip&lt;Space&gt;argc&lt;CR&gt;</code>.
 </p>
-<p>When the user is in CGDB mode and they hit <tt class="key">F2</tt>, the value of the map
-will be used instead.  The <kbd>i</kbd> key will first be received by CGDB, and
-it will put the user into insert mode.  Next, CGDB will get <kbd>p argc</kbd>
+<p>When the user is in TGDB mode and they hit <tt class="key">F2</tt>, the value of the map
+will be used instead.  The <kbd>i</kbd> key will first be received by TGDB, and
+it will put the user into insert mode.  Next, TGDB will get <kbd>p argc</kbd>
 followed by the <tt class="key">Enter</tt> key.
 </p>
-<p>CGDB currently supports two mapping lists.  Any mapping that was added 
-with the <var>map</var> command will be used by CGDB when it is in CGDB mode.
+<p>TGDB currently supports two mapping lists.  Any mapping that was added 
+with the <var>map</var> command will be used by TGDB when it is in TGDB mode.
 You can delete a mapping that you have created with the <var>map</var> command
 with the <var>unmap</var> command.  If you want to have mappings in GDB mode, you 
 can use the <var>imap</var> command.  Similarly, <var>iunmap</var> will delete a
@@ -1639,38 +1639,38 @@ used in any mapping command.
 <a name="Terminal-Control-Flow"></a>
 <div class="header">
 <p>
-Next: <a href="#Building-CGDB" accesskey="n" rel="next">Building CGDB</a>, Previous: <a href="#Key-User-Interface" accesskey="p" rel="prev">Key User Interface</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Building-TGDB" accesskey="n" rel="next">Building TGDB</a>, Previous: <a href="#Key-User-Interface" accesskey="p" rel="prev">Key User Interface</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Allowing-terminal-control-flow-in-CGDB"></a>
-<h2 class="chapter">7 Allowing terminal control flow in CGDB</h2>
+<a name="Allowing-terminal-control-flow-in-TGDB"></a>
+<h2 class="chapter">7 Allowing terminal control flow in TGDB</h2>
 <a name="index-terminal-control-flow"></a>
 
 <p>A user can typically set there control flow behavior by using the stty 
 command like so <code>stty -ixon -ixoff</code>.  This will disable control flow on
-the terminal where CGDB is started.  If you want to turn control flow back 
+the terminal where TGDB is started.  If you want to turn control flow back 
 on you can type <code>stty ixon ixoff</code>.  If flow control is on, when the user
 types <kbd>Ctrl-s</kbd>, the terminal stops.  When the user types <kbd>Ctrl-q</kbd>, the 
 terminal restarts.  When using readline, the <kbd>Ctrl-s</kbd> character usually does 
 a forward search.  So, if you want to get this, or other functionality out of 
-readline, simply turn off control flow and start CGDB.
+readline, simply turn off control flow and start TGDB.
 </p>
 <hr>
-<a name="Building-CGDB"></a>
+<a name="Building-TGDB"></a>
 <div class="header">
 <p>
 Next: <a href="#Copying-This-Manual" accesskey="n" rel="next">Copying This Manual</a>, Previous: <a href="#Terminal-Control-Flow" accesskey="p" rel="prev">Terminal Control Flow</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Building-CGDB-from-source"></a>
-<h2 class="chapter">8 Building CGDB from source</h2>
-<a name="index-building-CGDB"></a>
+<a name="Building-TGDB-from-source"></a>
+<h2 class="chapter">8 Building TGDB from source</h2>
+<a name="index-building-TGDB"></a>
 
-<p>Building CGDB from source requires several packages. First, CGDB is hosted
-at GitHub. You can determine how to get CGDB from source by looking here:
-https://cgdb.github.io/
+<p>Building TGDB from source requires several packages. First, TGDB is hosted
+at GitHub. You can determine how to get TGDB from source by looking here:
+https://tgdb.github.io/
 </p>
-<p>Once you have the source to CGDB, now you can begin to build it.  You will of 
-course need many packages to build CGDB. Below is a list of all of them 
-that are required to build CGDB.
+<p>Once you have the source to TGDB, now you can begin to build it.  You will of 
+course need many packages to build TGDB. Below is a list of all of them 
+that are required to build TGDB.
 </p>
 <dl compact="compact">
 <dt><code>GNU Make</code></dt>
@@ -1679,13 +1679,13 @@ will work.
 </p>
 </dd>
 <dt><code>GNU GCC</code></dt>
-<dd><p>The GNU C compiler. I&rsquo;ve compiled CGDB with versions as old as 2.9.5, and as
+<dd><p>The GNU C compiler. I&rsquo;ve compiled TGDB with versions as old as 2.9.5, and as
 new as 4.0.2.
 </p>
 </dd>
 <dt><code>GNU Readline</code></dt>
-<dd><p>The GNU readline library version 5.1. CGDB will not work with versions before 
-5.1.  Readline was modified specifically to work with CGDB.
+<dd><p>The GNU readline library version 5.1. TGDB will not work with versions before 
+5.1.  Readline was modified specifically to work with TGDB.
 </p>
 </dd>
 <dt><code>GNU Ncurses</code></dt>
@@ -1695,22 +1695,22 @@ probably will work.
 </dl>
 
 <p>Below is a list of optional packages you will need, if modifying certain files
-in CGDB.
+in TGDB.
 </p>
 <dl compact="compact">
 <dt><code>GNU Flex</code></dt>
 <dd><p>If you modify any files with an extension of <code>.l</code>, you will have to have 
-flex installed.  I have used flex 2.5.4 to build CGDB.
+flex installed.  I have used flex 2.5.4 to build TGDB.
 </p>
 </dd>
 <dt><code>GNU Texinfo</code></dt>
-<dd><p>If you modify <samp>doc/cgdb.texinfo</samp>, then you will be required to have this 
+<dd><p>If you modify <samp>doc/tgdb.texinfo</samp>, then you will be required to have this 
 package installed.  I have used version 4.7 to build the documentation for 
-CGDB.
+TGDB.
 </p></dd>
 </dl>
 
-<p>CGDB uses autoconf/automake to build its configure scripts and makefiles.  So, 
+<p>TGDB uses autoconf/automake to build its configure scripts and makefiles.  So, 
 if you change any of the autoconf/automake files, you will need this software 
 installed.
 </p>
@@ -1732,7 +1732,7 @@ installed.
 <a name="Copying-This-Manual"></a>
 <div class="header">
 <p>
-Next: <a href="#Index" accesskey="n" rel="next">Index</a>, Previous: <a href="#Building-CGDB" accesskey="p" rel="prev">Building CGDB</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Index" accesskey="n" rel="next">Index</a>, Previous: <a href="#Building-TGDB" accesskey="p" rel="prev">Building TGDB</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Copying-This-Manual-1"></a>
 <h2 class="appendix">Appendix A Copying This Manual</h2>
@@ -2135,24 +2135,24 @@ Previous: <a href="#Copying-This-Manual" accesskey="p" rel="prev">Copying This M
 <tr><td></td><td valign="top"><a href="#index-attributes">attributes</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Available-Attributes">Available Attributes</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-B">B</a></th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-building-CGDB">building CGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Building-CGDB">Building CGDB</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-building-TGDB">building TGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Building-TGDB">Building TGDB</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-C">C</a></th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-CGDB-key-user-interface">CGDB key user interface</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Key-User-Interface">Key User Interface</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-CGDB-mode">CGDB mode</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Understanding-CGDB">Understanding CGDB</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-TGDB-key-user-interface">TGDB key user interface</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Key-User-Interface">Key User Interface</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-TGDB-mode">TGDB mode</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Understanding-TGDB">Understanding TGDB</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-colors">colors</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Available-Colors">Available Colors</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-commands_002c-in-CGDB-mode">commands, in CGDB mode</a>:</td><td>&nbsp;</td><td valign="top"><a href="#CGDB-Mode">CGDB Mode</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-commands_002c-in-TGDB-mode">commands, in TGDB mode</a>:</td><td>&nbsp;</td><td valign="top"><a href="#TGDB-Mode">TGDB Mode</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-commands_002c-in-File-Dialog-mode">commands, in File Dialog mode</a>:</td><td>&nbsp;</td><td valign="top"><a href="#File-Dialog-Mode">File Dialog Mode</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-commands_002c-in-GDB-mode">commands, in GDB mode</a>:</td><td>&nbsp;</td><td valign="top"><a href="#GDB-Mode">GDB Mode</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-configuring-CGDB">configuring CGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Configuring-CGDB">Configuring CGDB</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-controlling-CGDB">controlling CGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Controlling-CGDB">Controlling CGDB</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-configuring-TGDB">configuring TGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Configuring-TGDB">Configuring TGDB</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-controlling-TGDB">controlling TGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Controlling-TGDB">Controlling TGDB</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-F">F</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-file-dialog-window">file dialog window</a>:</td><td>&nbsp;</td><td valign="top"><a href="#File-Dialog-Window">File Dialog Window</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-file-dialog-window-1">file dialog window</a>:</td><td>&nbsp;</td><td valign="top"><a href="#File-Dialog-Window">File Dialog Window</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-G">G</a></th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-GDB-mode">GDB mode</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Understanding-CGDB">Understanding CGDB</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-GDB-mode">GDB mode</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Understanding-TGDB">Understanding TGDB</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-GDB-window">GDB window</a>:</td><td>&nbsp;</td><td valign="top"><a href="#GDB-Window">GDB Window</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-GDB-window-1">GDB window</a>:</td><td>&nbsp;</td><td valign="top"><a href="#GDB-Window">GDB Window</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
@@ -2161,7 +2161,7 @@ Previous: <a href="#Copying-This-Manual" accesskey="p" rel="prev">Copying This M
 <tr><td></td><td valign="top"><a href="#index-highlighting-groups-1">highlighting groups</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Available-Highlighting-Groups">Available Highlighting Groups</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-I">I</a></th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-invocation-CGDB">invocation CGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Invocation">Invocation</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-invocation-TGDB">invocation TGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Invocation">Invocation</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-R">R</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-regular-expression-search">regular expression search</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Source-Window">Source Window</a></td></tr>
@@ -2169,7 +2169,7 @@ Previous: <a href="#Copying-This-Manual" accesskey="p" rel="prev">Copying This M
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-S">S</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-source-window">source window</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Source-Window">Source Window</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-status-bar">status bar</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Understanding-CGDB">Understanding CGDB</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-status-bar">status bar</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Understanding-TGDB">Understanding TGDB</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-status-bar-1">status bar</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Status-Bar">Status Bar</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-status-bar-2">status bar</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Status-Bar">Status Bar</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-switch-between-windows">switch between windows</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Switching-Windows">Switching Windows</a></td></tr>
@@ -2182,7 +2182,7 @@ Previous: <a href="#Copying-This-Manual" accesskey="p" rel="prev">Copying This M
 <tr><td></td><td valign="top"><a href="#index-ttimeoutlen">ttimeoutlen</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Configuring-the-KUI-Time-Out-Options">Configuring the KUI Time Out Options</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-U">U</a></th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-understanding-CGDB">understanding CGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Understanding-CGDB">Understanding CGDB</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-understanding-TGDB">understanding TGDB</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Understanding-TGDB">Understanding TGDB</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
 <table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Index_cp_letter-A"><b>A</b></a>
