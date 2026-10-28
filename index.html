@@ -54,9 +54,12 @@
 <h3>Features specific to tgdb</h3>
 
 <ul>
-<li>Python API for scripting</li>
+<li>Extra panes: locals, registers, stack, threads, evaluations, memory and disassembly, arranged freely in split layouts</li>
+<li>Python scripting API: <code>tgdb.screen</code> to arrange panes, <code>tgdb.debugger</code> to run GDB commands and read debugger state</li>
 <li>Heredoc-style :python &lt;&lt;EOF support</li>
 <li>User-defined :command support (similar to Vim)</li>
+<li>Scripted sessions with <code>--input</code> / <code>--batch</code> (and <code>--headless</code> for automation)</li>
+<li>Native Windows support through MSYS2 UCRT64 (experimental)</li>
 </ul>
 
 <h3>Stable Release</h3>
@@ -64,10 +67,13 @@ Download source package: <a href="https://github.com/etorth/tgdb/archive/refs/ta
 
 <h3>Latest Sources</h3>
 
-<pre><code>$ git clone git://github.com/etorth/tgdb.git
+<pre><code>$ git clone https://github.com/etorth/tgdb.git
 $ cd tgdb
-$ python -m tgdb /path/to/binary/for/debugging
+$ pip install -e .
+$ tgdb /path/to/binary/for/debugging
 </code></pre>
+
+<p>tgdb needs Python 3.11 or newer and a GDB built with Python support.</p>
 
 <h3>Documentation</h3>
 
